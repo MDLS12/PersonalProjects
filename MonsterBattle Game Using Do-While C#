@@ -1,0 +1,26 @@
+Random random = new Random();
+
+int herohealth = 10;
+int monsterhealth = 10;
+
+do
+{
+    int herodamage = random.Next(1,10);
+    int monsterdamage = random.Next(1,10);
+    herohealth-=herodamage;   
+    monsterhealth-=monsterdamage; 
+    
+    Console.WriteLine($"Hero was damaged and lost {herodamage} health and now has {herohealth} health");
+    Console.WriteLine($"Monster was damaged and lost {monsterdamage} health and now has {monsterhealth} health");
+
+}while (herohealth > 0 && monsterhealth > 0);
+{
+    if (herohealth <=0)
+    {
+        Console.WriteLine("Monster Wins");
+    }
+    if (monsterhealth < 0)
+    {
+        Console.WriteLine("Hero Wins");
+    }
+}
